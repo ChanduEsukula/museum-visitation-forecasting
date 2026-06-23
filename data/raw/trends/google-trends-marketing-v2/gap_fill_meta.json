@@ -1,0 +1,43 @@
+{
+  "fetched_at_utc": "2026-04-22T14:57:57.300743+00:00",
+  "timeframe": "2021-06-27 2025-12-31",
+  "geo": "US-CA",
+  "requested_terms": [
+    "Avila Adobe",
+    "Olvera Street",
+    "Los Angeles museums",
+    "things to do in LA",
+    "things to do in Los Angeles",
+    "historic sites California",
+    "Los Angeles attractions",
+    "Los Angeles history",
+    "family activities Los Angeles",
+    "free museums Los Angeles",
+    "Getty Museum",
+    "La Brea Tar Pits",
+    "Griffith Observatory",
+    "life in the 1840s",
+    "living history museum",
+    "historic house museum"
+  ],
+  "succeeded_terms": [
+    "Avila Adobe",
+    "Olvera Street",
+    "Los Angeles museums",
+    "things to do in LA",
+    "things to do in Los Angeles",
+    "Los Angeles attractions",
+    "Los Angeles history",
+    "family activities Los Angeles",
+    "free museums Los Angeles",
+    "Getty Museum",
+    "La Brea Tar Pits",
+    "Griffith Observatory",
+    "life in the 1840s",
+    "living history museum",
+    "historic house museum"
+  ],
+  "failed_terms": [
+    "historic sites California"
+  ]
+}

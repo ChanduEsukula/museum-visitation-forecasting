@@ -1,0 +1,30 @@
+{
+  "fetched_at_utc": "2026-04-22T14:16:23.070579+00:00",
+  "timeframe": "2014-01-01 2025-12-31",
+  "geo": "US-CA",
+  "requested_terms": [
+    "things to do in LA for 2 hours",
+    "historic attractions Los Angeles",
+    "kid friendly museums Los Angeles",
+    "kids activities downtown Los Angeles",
+    "1840s Los Angeles",
+    "interactive museums Los Angeles",
+    "cultural experiences Los Angeles"
+  ],
+  "succeeded_terms": [
+    "things to do in LA for 2 hours",
+    "historic attractions Los Angeles",
+    "kid friendly museums Los Angeles",
+    "kids activities downtown Los Angeles",
+    "1840s Los Angeles",
+    "interactive museums Los Angeles",
+    "cultural experiences Los Angeles"
+  ],
+  "failed_terms": [],
+  "terms_remaining": [
+    "kids activities downtown Los Angeles",
+    "1840s Los Angeles"
+  ],
+  "raw_rows_before": 4338,
+  "raw_rows_after": 5058
+}

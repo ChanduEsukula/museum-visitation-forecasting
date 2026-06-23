@@ -1,0 +1,41 @@
+term,lane,theme,notes,has_available_data,months_with_data,nonzero_months,coverage_pct,active_month_pct,avg_trend,recent_12m_avg,peak_trend,latest_month,latest_value,opportunity_score,rank_overall
+Los Angeles history,discovery_marketing,lifestyle_history,History-interest discovery,True,90,90,62.5,100.0,66.56,36.5,100.0,2021-06,54.0,61.19,1.0
+Olvera Street,museum_specific,tourism_discovery,Historic district context for Avila Adobe,True,90,90,62.5,100.0,61.31,32.25,100.0,2021-06,46.0,57.97,2.0
+Los Angeles museums,discovery_marketing,tourism_discovery,Proposal baseline keyword,True,90,90,62.5,100.0,55.13,35.08,100.0,2021-06,72.0,57.69,3.0
+things to do in Los Angeles,discovery_marketing,tourism_discovery,Variant spelling,True,90,90,62.5,100.0,54.46,30.17,100.0,2021-06,54.0,55.32,4.0
+El Pueblo Los Angeles,museum_specific,cultural_heritage,Required phrase; district identity,True,144,126,100.0,87.5,44.44,29.92,100.0,2025-12,29.0,53.32,5.0
+things to do in LA,discovery_marketing,tourism_discovery,Proposal phrasing,True,90,90,62.5,100.0,53.56,25.33,100.0,2021-06,42.0,52.91,6.0
+things to do in downtown LA,discovery_marketing,tourism_discovery,Downtown visitor intent,True,144,142,100.0,98.61,45.22,21.67,100.0,2025-12,23.0,50.92,8.0
+Los Angeles attractions,discovery_marketing,tourism_discovery,README baseline,True,90,90,62.5,100.0,49.29,20.67,100.0,2021-06,38.0,49.75,9.0
+family activities Los Angeles,discovery_marketing,family_activity,README baseline,True,90,57,62.5,63.33,43.16,12.58,100.0,2021-06,0.0,40.91,12.0
+free museums Los Angeles,discovery_marketing,tourism_discovery,Discovery intent,True,90,79,62.5,87.78,27.31,4.58,100.0,2021-06,22.0,35.79,13.0
+indoor things to do in Los Angeles,discovery_marketing,seasonal_visit_intent,Indoor museum-friendly intent,True,144,26,100.0,18.06,12.81,9.0,100.0,2025-12,57.0,29.06,14.0
+things to do in LA in December,discovery_marketing,seasonal_visit_intent,Month-specific winter travel intent,True,144,30,100.0,20.83,6.07,11.83,100.0,2025-12,100.0,28.92,15.0
+things to do in LA in February,discovery_marketing,seasonal_visit_intent,Month-specific winter travel intent,True,144,23,100.0,15.97,9.4,10.58,100.0,2025-12,33.0,28.71,16.0
+things to do in LA in January,discovery_marketing,seasonal_visit_intent,Month-specific winter travel intent,True,144,22,100.0,15.28,8.22,7.83,100.0,2025-12,53.0,27.11,17.0
+historic district Los Angeles,discovery_marketing,cultural_heritage,District-level heritage interest,True,144,14,100.0,9.72,5.44,7.92,100.0,2025-12,45.0,25.9,18.0
+things to do in Los Angeles in winter,discovery_marketing,seasonal_visit_intent,Seasonal museum outing intent,True,144,16,100.0,11.11,5.4,4.58,100.0,2025-12,55.0,24.52,19.0
+kid friendly museums Los Angeles,discovery_marketing,family_activity,Family museum intent,True,144,3,100.0,2.08,1.92,8.33,100.0,2025-12,0.0,24.44,20.0
+Avila Adobe,museum_specific,museum_brand,Dataset venue; brand search,True,90,13,62.5,14.44,10.04,4.58,100.0,2021-06,0.0,24.14,21.0
+historical sites Los Angeles,discovery_marketing,tourism_discovery,Local discovery intent,True,144,1,100.0,0.69,0.69,8.33,100.0,2025-12,0.0,23.99,22.0
+oldest building in Los Angeles,museum_specific,historic_identity,Broader significance wording,True,90,4,62.5,4.44,4.01,6.83,100.0,2021-06,0.0,22.64,23.0
+historic sites California,discovery_marketing,tourism_discovery,Proposal baseline keyword,True,90,5,62.5,5.56,4.21,4.33,100.0,2021-06,0.0,21.68,24.0
+living history museum,discovery_marketing,lifestyle_history,Museum positioning overlap,True,90,12,62.5,13.33,7.93,0.0,100.0,2021-06,0.0,21.44,25.0
+Mexican heritage Los Angeles,discovery_marketing,cultural_heritage,Olvera Street / El Pueblo cultural relevance,True,144,4,100.0,2.78,2.36,0.0,100.0,2025-12,0.0,20.87,26.0
+things to do near Union Station Los Angeles,discovery_marketing,short_visit_intent,Nearby quick-trip intent,True,144,4,100.0,2.78,2.28,0.0,100.0,2025-12,0.0,20.85,27.0
+things to do in LA when it rains,discovery_marketing,rainy_day_intent,Rainy-day trip planning,True,90,9,62.5,10.0,6.88,0.0,100.0,2021-06,0.0,20.84,28.0
+oldest house Los Angeles,museum_specific,historic_identity,Required phrase; shorter wording,True,144,4,100.0,2.78,2.21,0.0,100.0,2025-12,0.0,20.83,29.0
+oldest home in Los Angeles,museum_specific,historic_identity,Variant wording for Avila Adobe,True,144,2,100.0,1.39,1.28,0.0,100.0,2025-12,0.0,20.46,30.0
+family things to do in downtown LA,discovery_marketing,family_activity,Family discovery intent,True,144,2,100.0,1.39,1.27,0.0,100.0,2025-12,0.0,20.46,31.0
+cultural heritage Los Angeles,discovery_marketing,cultural_heritage,Heritage-oriented discovery,True,144,2,100.0,1.39,1.14,0.0,100.0,2025-12,0.0,20.42,32.0
+things to do in LA for a couple hours,discovery_marketing,short_visit_intent,Short outing phrasing,True,144,1,100.0,0.69,0.69,0.0,100.0,2025-12,0.0,20.24,33.0
+things to do in LA for 2 hours,discovery_marketing,short_visit_intent,Short outing phrasing variant,True,144,1,100.0,0.69,0.69,0.0,100.0,2025-12,0.0,20.24,34.0
+historic attractions Los Angeles,discovery_marketing,tourism_discovery,Local historic attraction intent,True,144,1,100.0,0.69,0.69,0.0,100.0,2025-12,0.0,20.24,35.0
+heritage tourism Los Angeles,discovery_marketing,cultural_heritage,Tourism framing for heritage travel,True,144,1,100.0,0.69,0.69,0.0,100.0,2025-12,0.0,20.24,36.0
+interactive museums Los Angeles,discovery_marketing,engagement_strategy,Growing interactive-interest category,True,144,1,100.0,0.69,0.69,0.0,100.0,2025-12,0.0,20.24,37.0
+cultural experiences Los Angeles,discovery_marketing,engagement_strategy,Growing cultural-experience category,True,144,1,100.0,0.69,0.69,0.0,100.0,2025-12,0.0,20.24,38.0
+historic house Los Angeles,museum_specific,historic_identity,Historic home interest,True,90,6,62.5,6.67,4.91,0.0,100.0,2021-06,0.0,20.02,39.0
+historic house museum,discovery_marketing,lifestyle_history,Category search,True,90,3,62.5,3.33,2.68,0.0,100.0,2021-06,0.0,19.13,40.0
+rainy day activities Los Angeles,discovery_marketing,rainy_day_intent,Rainy-day intent,True,90,3,62.5,3.33,2.61,0.0,100.0,2021-06,0.0,19.11,41.0
+oldest house in Los Angeles,museum_specific,historic_identity,Avila Adobe positioning,True,90,2,62.5,2.22,1.82,0.0,100.0,2021-06,0.0,18.8,42.0
+life in the 1840s,discovery_marketing,lifestyle_history,General lifestyle history curiosity,True,90,1,62.5,1.11,1.11,0.0,100.0,2021-06,0.0,18.51,43.0

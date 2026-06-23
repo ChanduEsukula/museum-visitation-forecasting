@@ -1,0 +1,14 @@
+{
+  "run_label": "python_v1",
+  "timeframe": "2014-01-01 2025-12-31",
+  "geo": "US-CA",
+  "processed_dir": "data/processed/python_v1",
+  "raw_dir": "data/raw/trends/python_v1",
+  "plots_dir": "outputs/plots/google_trends_marketing/python_v1",
+  "notes": [
+    "Google Trends values are normalized 0-100 within the selected timeframe and geo.",
+    "Peak trend values are peaks within this run window, not all-time search volume.",
+    "Use trends_monthly_available_only.csv when you want no empty columns.",
+    "Use keyword_opportunity_ranking_non_benchmarks.csv when you want rankings without competitors."
+  ]
+}

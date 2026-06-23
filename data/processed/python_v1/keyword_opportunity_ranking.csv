@@ -1,0 +1,46 @@
+term,lane,theme,notes,has_available_data,months_with_data,nonzero_months,coverage_pct,active_month_pct,avg_trend,recent_12m_avg,peak_trend,latest_month,latest_value,opportunity_score,rank_overall
+Los Angeles history,discovery_marketing,lifestyle_history,History-interest discovery,True,90.0,90.0,100.0,100.0,66.56,36.5,100.0,2021-06,54.0,63.06,1.0
+Olvera Street,museum_specific,tourism_discovery,Historic district context for Avila Adobe,True,90.0,90.0,100.0,100.0,61.31,32.25,100.0,2021-06,46.0,59.84,2.0
+Los Angeles museums,discovery_marketing,tourism_discovery,Proposal baseline keyword,True,90.0,90.0,100.0,100.0,55.13,35.08,100.0,2021-06,72.0,59.57,3.0
+things to do in Los Angeles,discovery_marketing,tourism_discovery,Variant spelling,True,90.0,90.0,100.0,100.0,54.46,30.17,100.0,2021-06,54.0,57.19,4.0
+things to do in LA,discovery_marketing,tourism_discovery,Proposal phrasing,True,90.0,90.0,100.0,100.0,53.56,25.33,100.0,2021-06,42.0,54.79,5.0
+La Brea Tar Pits,benchmark,competitor,Historic/cultural benchmark,True,90.0,90.0,100.0,100.0,50.07,23.67,100.0,2021-06,49.0,53.17,6.0
+Los Angeles attractions,discovery_marketing,tourism_discovery,README baseline,True,90.0,90.0,100.0,100.0,49.29,20.67,100.0,2021-06,38.0,51.62,7.0
+Griffith Observatory,benchmark,competitor,Destination benchmark,True,90.0,90.0,100.0,100.0,50.87,19.75,100.0,2021-06,39.0,51.61,8.0
+Getty Museum,benchmark,competitor,High-volume LA museum benchmark,True,90.0,90.0,100.0,100.0,50.53,18.58,100.0,2021-06,54.0,50.99,9.0
+family activities Los Angeles,discovery_marketing,family_activity,README baseline,True,90.0,57.0,100.0,63.33,43.16,12.58,100.0,2021-06,0.0,42.78,10.0
+free museums Los Angeles,discovery_marketing,tourism_discovery,Discovery intent,True,90.0,79.0,100.0,87.78,27.31,4.58,100.0,2021-06,22.0,37.67,11.0
+Avila Adobe,museum_specific,museum_brand,Dataset venue; brand search,True,90.0,13.0,100.0,14.44,10.04,4.58,100.0,2021-06,0.0,26.01,12.0
+oldest building in Los Angeles,museum_specific,historic_identity,Broader significance wording,True,90.0,4.0,100.0,4.44,4.01,6.83,100.0,2021-06,0.0,24.52,13.0
+historic sites California,discovery_marketing,tourism_discovery,Proposal baseline keyword,True,90.0,5.0,100.0,5.56,4.21,4.33,100.0,2021-06,0.0,23.56,14.0
+living history museum,discovery_marketing,lifestyle_history,Museum positioning overlap,True,90.0,12.0,100.0,13.33,7.93,0.0,100.0,2021-06,0.0,23.32,15.0
+things to do in LA when it rains,discovery_marketing,rainy_day_intent,Rainy-day trip planning,True,90.0,9.0,100.0,10.0,6.88,0.0,100.0,2021-06,0.0,22.72,16.0
+historic house Los Angeles,museum_specific,historic_identity,Historic home interest,True,90.0,6.0,100.0,6.67,4.91,0.0,100.0,2021-06,0.0,21.89,17.0
+historic house museum,discovery_marketing,lifestyle_history,Category search,True,90.0,3.0,100.0,3.33,2.68,0.0,100.0,2021-06,0.0,21.0,18.0
+rainy day activities Los Angeles,discovery_marketing,rainy_day_intent,Rainy-day intent,True,90.0,3.0,100.0,3.33,2.61,0.0,100.0,2021-06,0.0,20.99,19.0
+oldest house in Los Angeles,museum_specific,historic_identity,Avila Adobe positioning,True,90.0,2.0,100.0,2.22,1.82,0.0,100.0,2021-06,0.0,20.68,20.0
+life in the 1840s,discovery_marketing,lifestyle_history,General lifestyle history curiosity,True,90.0,1.0,100.0,1.11,1.11,0.0,100.0,2021-06,0.0,20.39,21.0
+El Pueblo Los Angeles,museum_specific,cultural_heritage,Required phrase; district identity,False,,,,,,,,,,,
+things to do in downtown LA,discovery_marketing,tourism_discovery,Downtown visitor intent,False,,,,,,,,,,,
+things to do in Los Angeles in winter,discovery_marketing,seasonal_visit_intent,Seasonal museum outing intent,False,,,,,,,,,,,
+things to do in LA in December,discovery_marketing,seasonal_visit_intent,Month-specific winter travel intent,False,,,,,,,,,,,
+things to do in LA in January,discovery_marketing,seasonal_visit_intent,Month-specific winter travel intent,False,,,,,,,,,,,
+things to do in LA in February,discovery_marketing,seasonal_visit_intent,Month-specific winter travel intent,False,,,,,,,,,,,
+indoor things to do in Los Angeles,discovery_marketing,seasonal_visit_intent,Indoor museum-friendly intent,False,,,,,,,,,,,
+things to do in LA for a couple hours,discovery_marketing,short_visit_intent,Short outing phrasing,False,,,,,,,,,,,
+things to do in LA for 2 hours,discovery_marketing,short_visit_intent,Short outing phrasing variant,False,,,,,,,,,,,
+things to do near Union Station Los Angeles,discovery_marketing,short_visit_intent,Nearby quick-trip intent,False,,,,,,,,,,,
+historical sites Los Angeles,discovery_marketing,tourism_discovery,Local discovery intent,False,,,,,,,,,,,
+historic attractions Los Angeles,discovery_marketing,tourism_discovery,Local historic attraction intent,False,,,,,,,,,,,
+cultural heritage Los Angeles,discovery_marketing,cultural_heritage,Heritage-oriented discovery,False,,,,,,,,,,,
+heritage tourism Los Angeles,discovery_marketing,cultural_heritage,Tourism framing for heritage travel,False,,,,,,,,,,,
+historic district Los Angeles,discovery_marketing,cultural_heritage,District-level heritage interest,False,,,,,,,,,,,
+Mexican heritage Los Angeles,discovery_marketing,cultural_heritage,Olvera Street / El Pueblo cultural relevance,False,,,,,,,,,,,
+kid friendly museums Los Angeles,discovery_marketing,family_activity,Family museum intent,False,,,,,,,,,,,
+kids activities downtown Los Angeles,discovery_marketing,family_activity,Downtown family intent,False,,,,,,,,,,,
+family things to do in downtown LA,discovery_marketing,family_activity,Family discovery intent,False,,,,,,,,,,,
+oldest house Los Angeles,museum_specific,historic_identity,Required phrase; shorter wording,False,,,,,,,,,,,
+oldest home in Los Angeles,museum_specific,historic_identity,Variant wording for Avila Adobe,False,,,,,,,,,,,
+1840s Los Angeles,museum_specific,lifestyle_history,Period / living history angle,False,,,,,,,,,,,
+interactive museums Los Angeles,discovery_marketing,engagement_strategy,Growing interactive-interest category,False,,,,,,,,,,,
+cultural experiences Los Angeles,discovery_marketing,engagement_strategy,Growing cultural-experience category,False,,,,,,,,,,,

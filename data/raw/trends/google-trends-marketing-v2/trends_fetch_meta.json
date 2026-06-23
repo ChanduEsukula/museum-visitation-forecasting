@@ -1,0 +1,11 @@
+{
+  "fetched_at_utc": "2026-04-22T15:16:20.955781+00:00",
+  "geo": "US-CA",
+  "timeframe": "2014-01-01 2025-12-31",
+  "keywords_file": "data/raw/trends/keywords.csv",
+  "n_terms": 43,
+  "out_raw": "/Users/trayton/src/school/Machine Learning/Final Presentation/museum-visitation-project/data/raw/trends/google-trends-marketing-v2/trends_weekly_long.csv",
+  "out_monthly_long": "/Users/trayton/src/school/Machine Learning/Final Presentation/museum-visitation-project/data/processed/google-trends-marketing-v2/trends_monthly_long.csv",
+  "out_monthly_wide": "/Users/trayton/src/school/Machine Learning/Final Presentation/museum-visitation-project/data/processed/google-trends-marketing-v2/trends_monthly.csv",
+  "out_presentation": "/Users/trayton/src/school/Machine Learning/Final Presentation/museum-visitation-project/data/processed/google-trends-marketing-v2/trends_monthly_dataset.csv"
+}
