@@ -207,4 +207,4 @@ marimo/_lsp/
 __marimo__/
 
 # Local scratch work - do not commit
-local_work/
+local_work/.DS_Store
