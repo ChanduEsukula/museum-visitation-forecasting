@@ -11,7 +11,7 @@
 ## Activate Environment
 
 ```bash
-cd "/Users/trayton/src/school/Machine Learning/Final Presentation/museum-visitation-project"
+cd "<local_path_redacted>"
 source .venv/bin/activate
 ```
 

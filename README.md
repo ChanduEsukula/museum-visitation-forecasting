@@ -1,300 +1,184 @@
-# museum-visitation-ml
-SEIS 763 ML project – Museum visitation forecasting using weather, Google Trends, and seasonality
+# Museum Visitation Forecasting
 
-# Museum Visitation Machine Learning Project
+A machine learning project that estimates monthly museum visitation using attendance history, weather, seasonality, calendar signals, and Google Trends search interest.
 
-## Overview
+This repository is a cleaned personal portfolio version of a student applied ML project. It is intended to show an end-to-end data science workflow: data collection, feature engineering, modeling, evaluation, visualization, and honest documentation of limitations.
 
-This project is part of **SEIS 763: Machine Learning**. The goal is to build a machine learning model that predicts **monthly museum visitor counts** using a combination of:
+## Project Overview
 
-- Museum attendance data  
-- Weather data  
-- Google Trends (as a marketing/demand proxy)  
-- Calendar and seasonal features  
+The project focuses on monthly visitation at **Avila Adobe**, a historic site in Los Angeles. The goal is to estimate visitor volume using public, month-level signals that could plausibly help with staffing, programming, and marketing planning.
 
-The project simulates a real-world data science workflow, integrating multiple data sources to generate actionable insights about visitor behavior.
+The workflow combines:
 
----
+- historical museum attendance
+- monthly Los Angeles weather aggregates
+- calendar and seasonality indicators
+- Google Trends search-interest signals
+- lag and rolling visitor features
+- regression models evaluated on a time-based holdout
 
-## Objectives
+Because some predictors use same-month weather and Google Trends values, the project is best described as **short-horizon forecasting / nowcasting**, not a production-grade future forecasting system.
 
-- Predict monthly museum visitation using machine learning  
-- Understand key drivers of attendance (weather, seasonality, demand signals)  
-- Estimate the impact of public interest (Google Trends) on visitation  
-- Build a reproducible and modular ML pipeline  
+## Why This Matters
 
----
+Museums and historic sites need to plan around demand patterns. Even a small monthly forecast can help answer practical questions:
 
-## Project Structure
+- Which months usually need more staffing or visitor support?
+- How much does historical seasonality explain attendance?
+- Do public-interest signals such as Google Trends add useful context?
+- Which search themes could inform content, SEO, or campaign timing?
 
-```text
-museum-ml-project/
-│
-├── README.md
-├── requirements.txt
-├── .gitignore
-│
-├── data/
-│   ├── raw/
-│   │   ├── museum/
-│   │   ├── weather/
-│   │   ├── trends/
-│   │   └── calendar/
-│   └── processed/
-│       ├── museum_monthly.csv
-│       ├── weather_monthly.csv
-│       ├── trends_monthly.csv
-│       ├── calendar_monthly.csv
-│       ├── final_dataset.csv
-│       └── model_dataset.csv
-│
-├── notebooks/
-│   ├── 01_museum_data.ipynb
-│   ├── 02_weather_data.ipynb
-│   ├── 03_google_trends.ipynb
-│   ├── 04_calendar_features.ipynb
-│   ├── 05_feature_engineering.ipynb
-│   ├── 06_modeling.ipynb
-│   └── 07_presentation_visuals.ipynb
-│
-├── src/
-│   ├── build_dataset.py
-│   ├── features.py
-│   ├── model.py
-│   ├── utils.py
-│   └── google_trends_marketing/
-│       ├── fetch_google_trends.py
-│       ├── rank_trends_keywords.py
-│       ├── summarize_trends_insights.py
-│       ├── run_trends_versioned.py
-│       └── import_google_trends_exports.py
-│
-├── outputs/
-│   ├── plots/
-│   │   └── google_trends_marketing/
-│   │       └── python_v1/
-│   ├── tables/
-│   └── models/
-│
-└── docs/
-    ├── proposal.docx
-    ├── presentation_outline.md
-    ├── final_notes.md
-    └── google_trends_marketing/
-        ├── avila_marketing_research.md
-        ├── google_trends_notes.md
-        ├── google_trends_chunked_runbook.md
-        └── sources.md
-
-    ---
+The most useful lesson from this project is not that one model "solves" visitation forecasting. It is that simple, interpretable features and baseline-aware evaluation can turn a messy student dataset into a clearer applied ML case study.
 
 ## Data Sources
 
-### Museum Visitor Data
-- Kaggle dataset of monthly museum visitors  
-- Target variable: `visitors`
+| Source | Role in Project | Notes |
+|---|---|---|
+| Museum attendance | Target variable | Monthly Avila Adobe visitors from a public Los Angeles museum visitor dataset |
+| Weather | Context features | Monthly temperature, precipitation, and wind aggregates |
+| Calendar | Seasonality features | Month, quarter, holiday, school-year, break, and tourism-season indicators |
+| Google Trends | Public-interest context | California-focused relative search-interest values for museum, tourism, and local-history terms |
+| Lag features | Forecasting memory | Prior-month, prior-year, and rolling visitor signals |
 
-### Weather Data
-- Meteostat or NOAA  
-- Features:
-  - Average temperature  
-  - Total precipitation  
-  - Wind speed  
-
-### Google Trends Data (Marketing Proxy)
-- Search interest data representing public demand  
-- Keywords:
-  - "Los Angeles museums"
-  - "things to do in Los Angeles"
-  - "Los Angeles attractions"
-  - "family activities Los Angeles"
-- Current Google Trends implementation in this branch focuses on **Avila Adobe** first, with a small benchmark set for context:
-  - Avila Adobe / Olvera Street brand and discovery terms
-  - Historical-significance terms such as "oldest house in Los Angeles"
-  - Lifestyle/history curiosity terms such as "living history museum"
-  - A small benchmark set including Getty Museum, La Brea Tar Pits, and Griffith Observatory
-- Versioned Google Trends workflow:
-  - scripts live in `src/google_trends_marketing/`
-  - notes and sources live in `docs/google_trends_marketing/`
-  - committed plots live in `outputs/plots/google_trends_marketing/python_v1/`
-  - current baseline processed outputs live in `data/processed/python_v1/`
-- Legacy non-versioned local outputs may still exist in some working copies, but the intended branch structure now uses the versioned `python_v1` folder.
-- Supporting notes and sources:
-  - `docs/google_trends_marketing/google_trends_notes.md`
-  - `docs/google_trends_marketing/avila_marketing_research.md`
-  - `docs/google_trends_marketing/google_trends_chunked_runbook.md`
-  - `docs/google_trends_marketing/sources.md`
-- Current `python_v1` files include:
-  - `data/raw/trends/keywords.csv`
-  - `data/raw/trends/python_v1/trends_weekly_long.csv`
-  - `data/processed/python_v1/trends_monthly_long.csv`
-  - `data/processed/python_v1/trends_monthly.csv`
-  - `data/processed/python_v1/trends_monthly_dataset.csv`
-  - `data/processed/python_v1/trends_monthly_available_only.csv`
-
-### Google Trends Lane Flow
-```mermaid
-flowchart TD
-    Keywords[data/raw/trends/keywords.csv] --> Fetch[src/google_trends_marketing/fetch_google_trends.py]
-    Fetch --> Raw[data/raw/trends/python_v1/trends_weekly_long.csv]
-    Raw --> Rank[src/google_trends_marketing/rank_trends_keywords.py]
-    Raw --> Summarize[src/google_trends_marketing/summarize_trends_insights.py]
-    Rank --> Processed[data/processed/python_v1/keyword_opportunity_ranking_non_benchmarks.csv]
-    Summarize --> Plots[outputs/plots/google_trends_marketing/python_v1/]
-    Processed --> Notebook[notebooks/03_google_trends.ipynb]
-    Plots --> Notebook
-```
-
-### Calendar Features
-- Month
-- Seasonality indicators
-- Holiday flags
-
----
-
-## Data Workflow
-
-1. Each team member builds a dataset  
-2. Each dataset must:
-   - Be monthly  
-   - Include `month` column (`YYYY-MM`)  
-3. Merge datasets:
-
-```python
-df = museum.merge(weather, on="month", how="left")
-df = df.merge(trends, on="month", how="left")
-df = df.merge(calendar, on="month", how="left")
+Google Trends values are relative 0-100 indices, not raw search counts. They should be interpreted as search-interest context, not as proof of marketing causality.
 
 ## Feature Engineering
 
-- `visitors_lag1` (previous month)  
-- `visitors_lag12` (previous year)  
-- `rolling_mean_3`  
-- Seasonal features  
+Feature groups include:
 
----
+- `visitors_lag1`: previous month visitation
+- `visitors_lag12`: same month in the prior year
+- `rolling_mean_3`: trailing 3-month visitor average
+- weather aggregates such as `avg_temp_F`, `total_precip_in`, and `avg_wind_mph`
+- calendar flags such as winter/summer indicators, holiday season, school-year month, and break periods
+- Google Trends keyword columns for local attractions, museums, history, family activities, and benchmark terms
 
-## Machine Learning Model
+The lag features are the most important modeling signal because museum visitation is strongly seasonal and autocorrelated.
 
-- Linear Regression (baseline)
+## Modeling Approach
 
-### Target
-- Monthly museum visitors  
+The checked-in modeling notebook uses a chronological train/test split and evaluates regression models with RMSE, MAE, and R2.
 
-### Inputs
-- Weather  
-- Trends  
-- Calendar  
-- Lag features  
+Models compared in the current committed result table:
 
----
+- Linear Regression
+- Cleaned Linear Regression
+- LASSO
+- LASSO-LARS
+- Random Forest
+- Gradient Boosting
 
-## Evaluation Metrics
+The strongest committed model is **LASSO-LARS**, which performs similarly to LASSO and gives an interpretable regularized linear model for a small, correlated feature set.
 
-- MAE (Mean Absolute Error)  
-- RMSE (Root Mean Squared Error)  
-- R² Score  
+## Results
 
----
+Current committed model comparison:
 
-## How to Run
+| Model | RMSE | MAE | R2 |
+|---|---:|---:|---:|
+| LASSO-LARS | 2982.044 | 2259.141 | 0.783 |
+| LASSO | 2986.711 | 2258.057 | 0.782 |
+| Gradient Boosting | 5001.671 | 3340.323 | 0.389 |
+| Random Forest | 5533.448 | 3604.140 | 0.252 |
+| Linear Regression | 8769.045 | 6205.897 | -0.879 |
+| Cleaned Linear Regression | 8769.045 | 6205.897 | -0.879 |
 
-### Clone repo
+Interpretation:
+
+- Regularized linear models performed best on this small, high-dimensional dataset.
+- Plain linear regression struggled because the feature set contains correlated and redundant predictors.
+- Lag and seasonality features carried more signal than weather alone.
+- Google Trends is useful for demand context and keyword research, but should not be treated as causal evidence.
+
+## Key Visuals
+
+Recommended visuals to review:
+
+- [LASSO actual vs predicted](outputs/plots/lasso_actual_vs_predicted.png)
+- [LASSO top predictors](outputs/plots/lasso_top_predictors_plot.png)
+- [Random Forest feature importance](outputs/plots/rf_feature_importance.png)
+- [Monthly visitor trend](outputs/presentation/monthly_visitors.png)
+- [Top Google Trends keyword opportunities](outputs/plots/google_trends_marketing/google-trends-marketing-v6/top_keyword_opportunities.png)
+- [Avila visitors vs selected search-interest trends](outputs/plots/google_trends_marketing/google-trends-marketing-v6/avila_vs_top_trends_scaled.png)
+
+## How To Run
+
+Python 3.11+ is recommended.
+
 ```bash
-git clone https://github.com/Andy-FireClimWx/museum-ml-project.git
-cd museum-ml-project
-
-## Setup & Execution
-
-### Create environment
-```bash
-python -m venv .venv
-.venv\Scripts\activate   # Windows
-# or
-source .venv/bin/activate   # Mac/Linux
-
-### Install Packages
-```bash
-pip install -r requirements.txt
-
-### Build Google Trends dataset
-```bash
-python src/google_trends_marketing/fetch_google_trends.py
+git clone https://github.com/ChanduEsukula/museum-visitation-forecasting
+cd museum-visitation-forecasting
+python3 -m venv .venv
+source .venv/bin/activate
+python -m pip install --upgrade pip
+python -m pip install -r requirements.txt
 ```
 
-If Google rate-limits the API after a successful raw pull, rebuild the monthly outputs from the cached raw file:
+Notebook workflow:
 
-```bash
-python src/google_trends_marketing/fetch_google_trends.py --use-existing-raw
-```
+1. `notebooks/01_museum_data.ipynb`
+2. `notebooks/02_weather_data.ipynb`
+3. `notebooks/03_google_trends.ipynb`
+4. `notebooks/08_build_final_dataset.ipynb`
+5. `notebooks/09_create_model_dataset.ipynb`
+6. `notebooks/06_modeling.ipynb`
 
-If a longer pull is interrupted, resume from the partially saved raw CSV:
+Google Trends live fetching is optional because cached processed outputs are included. If you want to rebuild the Trends lane from cached data:
 
-```bash
-python src/google_trends_marketing/fetch_google_trends.py --resume-existing-raw
-```
-
-### Build keyword ranking
-```bash
-python src/google_trends_marketing/rank_trends_keywords.py
-```
-
-### Print summaries and save plots
-```bash
-python src/google_trends_marketing/summarize_trends_insights.py
-```
-
-This summary script prints:
-- top-ranked available terms
-- theme-level opportunity summaries
-- terms still waiting on live fetch
-- quick visitor-alignment correlations for Avila Adobe
-
-It also saves plots to:
-- `outputs/plots/google_trends_marketing/top_keyword_opportunities.png`
-- `outputs/plots/google_trends_marketing/avila_vs_top_trends.png`
-- `outputs/plots/google_trends_marketing/theme_opportunity_scores.png`
-
-### Recommended: run everything into a versioned folder
 ```bash
 python src/google_trends_marketing/run_trends_versioned.py --run-label python_v1 --use-existing-raw
 ```
 
-This writes a self-contained run to:
-- `data/processed/python_v1/`
-- `data/raw/trends/python_v1/`
-- `outputs/plots/google_trends_marketing/python_v1/`
+Google Trends can rate-limit live API pulls. Use cached raw data where possible for reproducibility.
 
-For a new run, change the label:
-```bash
-python src/google_trends_marketing/run_trends_versioned.py --run-label python_v2 --resume-existing-raw
+## Repository Structure
+
+```text
+museum-visitation-forecasting/
+├── README.md
+├── requirements.txt
+├── data/
+│   ├── raw/
+│   └── processed/
+├── notebooks/
+├── src/
+│   └── google_trends_marketing/
+├── outputs/
+│   ├── plots/
+│   ├── presentation/
+│   └── tables/
+└── docs/
+    ├── archive/
+    ├── google_trends_marketing/
+    └── linkedin_post_assets.md
 ```
 
----
+## Limitations
 
-## Team Roles
+- **Small dataset:** the cleaned portfolio framing uses 62 final modeling rows after strict filtering and lag creation; older intermediate notebook artifacts are retained for transparency.
+- **Small holdout:** model results are based on a 13-month holdout, so performance should be treated as directional rather than definitive.
+- **Single-site scope:** the project focuses on Avila Adobe and should not be generalized to all museums without additional testing.
+- **Nowcasting caveat:** same-month weather and Google Trends signals make this closer to nowcasting than pure before-the-month forecasting.
+- **No rolling-origin backtest yet:** the project does not yet evaluate repeated time-based splits across multiple forecast windows.
+- **No prediction intervals:** forecasts do not yet include uncertainty bands.
+- **Google Trends is contextual:** search-interest signals are relative and should be interpreted carefully, not causally.
 
-- Project Lead  
-- Weather Data  
-- Google Trends  
-- Museum Data  
-- Feature Engineering  
-- Modeling  
-- Presentation  
+## My Contribution / Attribution
 
----
+This repository is a cleaned personal portfolio version of a student/team project. The original work began collaboratively, and this public version is organized to present the applied ML workflow I can honestly discuss: dataset assembly, feature engineering, forecasting methodology, model evaluation, visualization, and documentation.
 
-## Key Insights (Expected)
+Archived class-style materials, if present, are retained only as background artifacts and are not the main portfolio deliverable. The README and LinkedIn assets foreground the cleaned project narrative and avoid overstating ownership or production readiness.
 
-- Strong seasonal patterns  
-- Weather impacts attendance  
-- Google Trends reflects demand  
-- Lag features improve predictions  
+## Project Context
 
----
+This project started in an academic setting and has been polished into a portfolio case study. It is a small applied machine learning project, not a production forecasting platform.
 
-## Notes
+## Future Improvements
 
-- All datasets must use `month` format (`YYYY-MM`)  
-- Missing values handled after merging  
-- COVID period handled during modeling  
+- Add rolling-origin backtesting across several holdout windows.
+- Compare against simple forecasting baselines such as lag-1 and lag-12 naive models.
+- Test lagged weather and lagged Google Trends features for true ahead-of-month forecasting.
+- Add prediction intervals or quantile-based uncertainty estimates.
+- Expand to multiple museums or historic sites for better generalization.
+- Add event calendars, school calendars, marketing campaigns, or operations data if available.
+- Move the notebook modeling workflow into reusable scripts with automated checks.

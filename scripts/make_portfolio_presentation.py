@@ -19,7 +19,7 @@ from pptx.util import Inches, Pt
 ROOT = Path(__file__).resolve().parents[1]
 OUT_DIR = ROOT / "outputs" / "presentation"
 OUT_DIR.mkdir(parents=True, exist_ok=True)
-DECK_PATH = ROOT / "outputs" / "museum_visitation_end_to_end_presentation.pptx"
+DECK_PATH = ROOT / "outputs" / "museum_visitation_portfolio_presentation.pptx"
 
 NAVY = RGBColor(21, 35, 55)
 TEAL = RGBColor(0, 123, 135)
@@ -182,7 +182,7 @@ def main():
     s.background.fill.fore_color.rgb = NAVY
     text_box(s, "Museum Visitation Forecasting", 0.75, 1.0, 11.8, 0.8, 36, WHITE, True)
     text_box(s, "An end-to-end machine learning project using attendance, weather, Google Trends, and calendar seasonality", 0.8, 1.85, 11.2, 0.6, 18, RGBColor(219, 232, 235))
-    text_box(s, "SEIS 763 Machine Learning | Avila Adobe / Los Angeles heritage tourism", 0.8, 5.95, 9.8, 0.4, 16, RGBColor(219, 232, 235))
+    text_box(s, "Applied ML portfolio case study | Avila Adobe / Los Angeles heritage tourism", 0.8, 5.95, 9.8, 0.4, 16, RGBColor(219, 232, 235))
     card(s, 0.8, 3.0, 3.1, 1.35, RGBColor(245, 248, 248), RGBColor(245, 248, 248))
     text_box(s, "Forecasting Question", 1.05, 3.18, 2.5, 0.3, 14, TEAL, True)
     text_box(s, "Can monthly museum attendance be predicted using seasonal, weather, and public-interest signals?", 1.05, 3.58, 2.45, 0.5, 14, INK)
@@ -247,7 +247,7 @@ def main():
 
     # 6
     s = prs.slides.add_slide(blank)
-    title(s, "End-to-End Pipeline", "The project follows a reproducible data science workflow from raw data to presentation outputs.")
+    title(s, "End-to-End Pipeline", "The project follows a reproducible data science workflow from raw data to portfolio outputs.")
     steps = [
         ("Raw data", "museum, weather,\ntrends, calendar"),
         ("Cleaning", "monthly format,\nconsistent columns"),
@@ -334,7 +334,7 @@ def main():
     add_table(s, model_steps, 0.8, 1.55, 11.8, 2.7, 13)
     bullets(s, [
         "Metrics: RMSE, MAE, and R2.",
-        "Interpretation priority: balance predictive accuracy with clear explanation for class presentation.",
+        "Interpretation priority: balance predictive accuracy with clear explanation for portfolio review.",
         "Regularization is especially useful because many trend and calendar variables can overlap.",
     ], 1.0, 4.65, 11.0, 1.4, 17)
     footer(s, slide_no); slide_no += 1

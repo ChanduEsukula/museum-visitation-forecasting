@@ -4,8 +4,8 @@
   "timeframe": "2014-01-01 2025-12-31",
   "keywords_file": "data/raw/trends/keywords.csv",
   "n_terms": 45,
-  "out_raw": "/Users/trayton/src/school/Machine Learning/Final Presentation/museum-visitation-project/data/raw/trends/python_v1/trends_weekly_long.csv",
-  "out_monthly_long": "/Users/trayton/src/school/Machine Learning/Final Presentation/museum-visitation-project/data/processed/python_v1/trends_monthly_long.csv",
-  "out_monthly_wide": "/Users/trayton/src/school/Machine Learning/Final Presentation/museum-visitation-project/data/processed/python_v1/trends_monthly.csv",
-  "out_presentation": "/Users/trayton/src/school/Machine Learning/Final Presentation/museum-visitation-project/data/processed/python_v1/trends_monthly_dataset.csv"
+  "out_raw": "<local_path_redacted>/data/raw/trends/python_v1/trends_weekly_long.csv",
+  "out_monthly_long": "<local_path_redacted>/data/processed/python_v1/trends_monthly_long.csv",
+  "out_monthly_wide": "<local_path_redacted>/data/processed/python_v1/trends_monthly.csv",
+  "out_presentation": "<local_path_redacted>/data/processed/python_v1/trends_monthly_dataset.csv"
 }
